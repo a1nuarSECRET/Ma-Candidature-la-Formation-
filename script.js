@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const name = document.getElementById("name");
   const email = document.getElementById("email");
@@ -17,10 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
-      header.style.top = "-100px"; // Ocultar encabezado al desplazarse hacia abajo
+      header.style.top = "-100px";
     } else {
-      header.style.top = "0"; // Mostrar encabezado al desplazarse hacia arriba
+      header.style.top = "0";
     }
     lastScrollTop = scrollTop;
   });
 });
+</script>
