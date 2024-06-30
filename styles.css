@@ -1,31 +1,33 @@
-/* Reset y estilos generales */
+/* Estilos generales */
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Evitar scroll horizontal */
   background: linear-gradient(
     135deg,
     #004080,
     #ff0000
-  ); /* Gradiente azul y rojo */
+  ); /* Cambiado a azul y rojo */
+  color: #333;
+  overflow-x: hidden; /* Para evitar el scroll horizontal */
+  animation: gradientAnimation 10s ease infinite;
 }
 
-/* Animación de fondo tipo olas */
-@keyframes waveBackground {
+/* Animación de fondo */
+@keyframes gradientAnimation {
   0% {
-    background-position: 0 50%;
+    background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0 50%;
+    background-position: 0% 50%;
   }
 }
 
-/* Estilo del header */
+/* Header */
 header {
   background: rgba(0, 64, 128, 0.9); /* Azul Michelin con transparencia */
   color: #fff;
@@ -41,25 +43,41 @@ header {
 }
 
 header .logo {
-  width: 100px;
+  width: 80px; /* Tamaño reducido del logo para móviles */
   margin-bottom: 1rem;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Tamaño de fuente reducido para móviles */
   margin: 0;
-  animation: fadeInDown 1s ease-in-out;
+  animation: fadeInDown 2s ease-in-out;
+}
+
+/* Ajuste para pantallas móviles */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 0; /* Reducir el padding superior e inferior */
+  }
+
+  header .logo {
+    width: 60px; /* Reducir aún más el tamaño del logo */
+    margin-bottom: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
 }
 
 /* Contenido principal */
 main {
-  padding: 6rem 2rem 2rem; /* Ajuste del padding para evitar superposiciones */
+  padding: 6rem 2rem 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
 section {
-  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 10px;
